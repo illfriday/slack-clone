@@ -10,7 +10,7 @@ function Header() {
         <AccessTimeIcon />
         <SearchContainer>
           <Search>
-            <input type="text" placeholder="Search..." />
+            <input type="text" placeholder="Search..." alt=""/>
           </Search>
         </SearchContainer>
         <HelpOutlineIcon />
