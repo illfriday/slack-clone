@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
 import ChatInput from './ChatInput'
 import ChatMessage from './ChatMessage'
-// import StarOutlineIcon from '@material-ui/icons/StarOutline';
+import StarOutlineIcon from '@material-ui/icons/StarOutline';
 
 // import { Container } from '@material-ui/core';
 // import Header from './Header';
@@ -16,6 +16,9 @@ function Chat() {
         <Channel>
           <ChannelName>
             #clever
+            <ChatIconSmall>
+              <StarOutlineIcon style={{ fontSize: 'medium' }} />
+            </ChatIconSmall>
           </ChannelName>
           <ChannelInfo>
             Company-wide anouncements and work-based matters
@@ -74,7 +77,7 @@ const Header = styled.div`
   justify-content: space-between;
 `
 const MessageContainer = styled.div`
-  
+  background: #fcfcfc;
 `
 
 const Channel = styled.div`
@@ -88,6 +91,7 @@ const ChannelDetails = styled.div`
 
 const ChannelName = styled.div`
   font-weight: 700;
+  display: flex;
 `
 
 const ChannelInfo = styled.div`
@@ -138,8 +142,7 @@ const Info = styled(InfoOutlinedIcon)`
 // const Left = styled.div`
 // `
 
-// const ChatIconSmall = styled.div`
-
-//   display:flex;
-//   align-itmes: center;
-// `
+const ChatIconSmall = styled.div`
+   display:flex;
+   align-itmes: center;
+ `

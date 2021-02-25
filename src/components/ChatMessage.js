@@ -3,29 +3,51 @@ import styled from 'styled-components'
 
 function ChatMessage() {
   return (
-    <Container>
-      <UserAvatar>
-        <img src= "https://randomuser.me/api/portraits/women/63.jpg" alt = ""/>
-      </UserAvatar>
-      <MessageContent>
-        <Name>
-          Juanita Evans
+    <BigContainer>
+      <Container>
+        <UserAvatar>
+          <img src="https://randomuser.me/api/portraits/women/63.jpg" alt="" />
+        </UserAvatar>
+        <MessageContent>
+          <Name>
+            Juanita Evans
           <span>2/23/2021 1:22:55PM</span>
-        </Name>
-        <Text>
-          I'm absolutely killing it!
+          </Name>
+          <Text>
+            I'm absolutely killing it!
         </Text>
-      </MessageContent>
-    </Container>
+        </MessageContent>
+      </Container>
+      <Container>
+        <UserAvatar>
+          <img src="https://randomuser.me/api/portraits/men/82.jpg" alt="" />
+        </UserAvatar>
+        <MessageContent>
+          <Name>
+            Alfred Graham
+          <span>2/23/2021 10:17:41PM</span>
+          </Name>
+          <Text>
+            don't be so hasty, Juanita!
+        </Text>
+        </MessageContent>
+      </Container>
+    </BigContainer>
+    
   )
 }
 
 export default ChatMessage
 
+const BigContainer = styled.div``
+
 const Container = styled.div`
   padding: 8px 20px;
   display: flex;
   align-items: center;
+  :hover {
+    background: #e6e6e6;
+  }
 `
 
 const UserAvatar = styled.div`
