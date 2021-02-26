@@ -1,5 +1,5 @@
 // import { Container } from '@material-ui/core'
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import SendIcon from '@material-ui/icons/Send';
 import FlashOnOutlinedIcon from '@material-ui/icons/FlashOnOutlined';
@@ -13,12 +13,26 @@ import FormatListBulletedIcon from '@material-ui/icons/FormatListBulleted';
 import EmojiEmotionsIcon from '@material-ui/icons/EmojiEmotions';
 import AttachFileIcon from '@material-ui/icons/AttachFile';
 
-function ChatInput() {
+function ChatInput({ sendMessage }) {
+
+  const [ input, setInput] = useState("");
+
+  const send = (e) => {
+    e.preventDefault();
+    if(!input) return;
+    sendMessage(input)
+    setInput("")
+  }
+
   return (
     <ChatContainer>
       <InputContainer>
         <form>
-          <input type="text" placeholder="Message here..." />
+          <input 
+          onChange={(e)=>setInput(e.target.value)}
+            type="text" 
+            value={input}
+            placeholder="Message here..." />
           
         </form>
         <ButtonContainer>
@@ -58,7 +72,9 @@ function ChatInput() {
             <BButton>
               <AttachFileIcon />
             </BButton>
-            <SendButton>
+            <SendButton 
+              type = "submit"
+              onClick={send}>
               <Send />
             </SendButton>
           </LinkButtons>
@@ -170,7 +186,7 @@ const BButton = styled.div`
   }
 `
 
-const SendButton = styled.div`
+const SendButton = styled.button`
   background: #007a5a;
   border-radius: 2px;
   width: 32px;
@@ -181,6 +197,8 @@ const SendButton = styled.div`
   margin-top: 5px;
   margin-right: 5px;
   cursor: pointer;
+  border: none;
+
   .MuiSvgIcon-root{
     width: 18px;
   }
